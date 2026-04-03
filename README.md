@@ -19,14 +19,17 @@ GitHub → Jenkins → EC2 Server
 ## ⚙️ Jenkins Installation Steps
 
 ### 1. Update System
-
+```bash
 sudo apt-get update
-
+ ```
 
 ### Install Java
+```bash
 sudo apt-get install openjdk-11-jdk -y
+ ```
 
 ### Install Jenkins
+```bash
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
 /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
@@ -37,24 +40,30 @@ https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
 sudo apt-get update
 sudo apt-get install jenkins -y
 
-
+ ```
+ 
 ### Start Jenkins
+```bash
 sudo systemctl start jenkins
 sudo systemctl status jenkins
+ ```
 
 ### Enable Firewall
-
+```bash
 sudo ufw allow 8080
 sudo ufw enable
 sudo ufw status
+ ```
 
 ###  Access Jenkins
-
+```bash
 http://<EC2-PUBLIC-IP>:8080
+ ```
 
 ###  Get Admin Password
-
+```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+ ```
 
 ## 🚀 Future Enhancements
 
